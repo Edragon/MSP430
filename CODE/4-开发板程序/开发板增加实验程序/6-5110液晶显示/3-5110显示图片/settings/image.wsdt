@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>5110img/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>95</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      <PreferedWindows><Position>4</Position><ScreenPosX>8</ScreenPosX><ScreenPosY>113</ScreenPosY><Windows/></PreferedWindows></Workspace>
+      <Build>
+        
+        
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>193</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+    <Debug-Log><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>965</ColumnWidth1></Debug-Log><TerminalIO/></Static>
+    <Windows>
+      
+      
+    <Wnd0><Tabs><Tab><Identity>TabID-32140-7104</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd0><Wnd1><Tabs><Tab><Identity>TabID-20346-7121</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>5110img</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd1><Wnd2><Tabs><Tab><Identity>TabID-5055-30492</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.cpp</Filename><XPos>0</XPos><YPos>147</YPos><SelStart>5267</SelStart><SelEnd>5267</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\2-430&#x5355;&#x7247;&#x673A;\4-&#x5F00;&#x53D1;&#x677F;&#x7A0B;&#x5e8F;\9-5110&#x6DB2;&#x6676;&#x663e;&#x793A;\3-5110&#x663e;&#x793A;&#x56Fe;&#x7247;\main.cpp</Filename><XPos>0</XPos><YPos>137</YPos><SelStart>5034</SelStart><SelEnd>5034</SelEnd></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-012e8cd0><key>iaridepm.enu1</key></Toolbar-012e8cd0></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2><Row3><Sizes><Toolbar-013332c8><key>debuggergui.enu1</key></Toolbar-013332c8></Sizes></Row3><Row4><Sizes><Toolbar-013523e0><key>430fet1</key></Toolbar-013523e0></Sizes></Row4></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>183</Bottom><Right>169</Right><x>-2</x><y>-2</y><xscreen>171</xscreen><yscreen>262</yscreen><sizeHorzCX>196326</sizeHorzCX><sizeHorzCY>382482</sizeHorzCY><sizeVertCX>196326</sizeVertCX><sizeVertCY>270073</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>260</Bottom><Right>873</Right><x>-2</x><y>-2</y><xscreen>875</xscreen><yscreen>262</yscreen><sizeHorzCX>1004592</sizeHorzCX><sizeHorzCY>382482</sizeHorzCY><sizeVertCX>196326</sizeVertCX><sizeVertCY>382482</sizeVertCY></Rect></Wnd0></Sizes></Row0><Row1><Sizes><Wnd2><Rect><Top>258</Top><Left>-2</Left><Bottom>457</Bottom><Right>873</Right><x>-2</x><y>258</y><xscreen>875</xscreen><yscreen>199</yscreen><sizeHorzCX>1004592</sizeHorzCX><sizeHorzCY>290511</sizeHorzCY><sizeVertCX>229621</sizeVertCX><sizeVertCY>290511</sizeVertCY></Rect></Wnd2></Sizes></Row1></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>4028904946</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\sys.r43</file>
+            <file>$PROJ_DIR$\..\lcd\Ascii_8x16.h</file>
+            <file>$PROJ_DIR$\..\lcd\Chinese.h</file>
+            <file>$PROJ_DIR$\..\lcd\GB2424.h</file>
+            <file>$PROJ_DIR$\..\lcd\lcd.c</file>
+            <file>$PROJ_DIR$\..\lcd\lcd.h</file>
+            <file>$PROJ_DIR$\..\led\led.c</file>
+            <file>$PROJ_DIR$\..\led\led.h</file>
+            <file>$PROJ_DIR$\..\main\main.c</file>
+            <file>$PROJ_DIR$\..\main\main.h</file>
+            <file>$PROJ_DIR$\..\sys\sys.c</file>
+            <file>$PROJ_DIR$\..\sys\sys.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\MSP430F5438A-TFT2.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\sys.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\led.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\MSP430F5438A-TFT2.8.d43</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430f5438a.xcl</file>
+            <file>$PROJ_DIR$\Debug\Exe\MSP430F5438A-TFT2.8.ulp</file>
+            <file>$TOOLKIT_DIR$\inc\io430.h</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\led.r43</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f5438a.h</file>
+            <file>$TOOLKIT_DIR$\inc\io430x14x.h</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\led.__cstat.et</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\sys.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\gui.pbi</file>
+            <file>$PROJ_DIR$\..\lcd\gui.c</file>
+            <file>$PROJ_DIR$\GUI\gui.h</file>
+            <file>$PROJ_DIR$\gui.c</file>
+            <file>$PROJ_DIR$\GUI\gui.c</file>
+            <file>$PROJ_DIR$\gui.h</file>
+            <file>$PROJ_DIR$\..\lcd\font.h</file>
+            <file>$PROJ_DIR$\..\lcd\gui.h</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 17</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\lcd\lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25 1 3 2 11 23 5 21</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5 11 23 25 21 3 1 2</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\led\led.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 16</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 28</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 21 23 25 11 7</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 7 11 23 25 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\main\main.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 30</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 33</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7 23 25 11 5 9 21</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 9 11 23 25 21 7 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\sys\sys.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5 23 25 7 11 21</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 11 23 25 21 7 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\MSP430F5438A-TFT2.8.d43</name>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 18 32 26 22 33 0 12</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 33</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20 24 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\lcd\gui.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 42 25 41 11 23 5 21</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 5 11 23 25 21 41 42</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\gui.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 40</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\GUI\gui.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\gui.c</name>
+            <tool>ICC430</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>XLINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

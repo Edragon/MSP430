@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>MSP430_SD/Release</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>245</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>193</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+    <TerminalIO/><Debug-Log><ColumnWidth0>19</ColumnWidth0><ColumnWidth1>966</ColumnWidth1></Debug-Log><Find-in-Files><ColumnWidth0>344</ColumnWidth0><ColumnWidth1>49</ColumnWidth1><ColumnWidth2>591</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-30555-10480</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>MSP430_SD</ExpandedNode><ExpandedNode>MSP430_SD/FAT16.c</ExpandedNode><ExpandedNode>MSP430_SD/main.c</ExpandedNode><ExpandedNode>MSP430_SD/mmc.c</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-11442-10633</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-12260-5684</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-4756-9890</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\in430.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>1246</SelStart><SelEnd>1246</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\intrinsics.h</Filename><XPos>0</XPos><YPos>69</YPos><SelStart>346</SelStart><SelEnd>346</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MMC.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>4397</SelStart><SelEnd>4397</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\mmc.c</Filename><XPos>0</XPos><YPos>593</YPos><SelStart>19846</SelStart><SelEnd>19846</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\clib\math.h</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\clib\stdio.h</Filename><XPos>0</XPos><YPos>37</YPos><SelStart>201</SelStart><SelEnd>201</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\clib\sysmac.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>524</SelStart><SelEnd>524</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\MSP430x14x.H</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>4668</SelStart><SelEnd>4668</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\clib\stdarg.h</Filename><XPos>0</XPos><YPos>90</YPos><SelStart>185</SelStart><SelEnd>185</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\clib\string.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>120</YPos><SelStart>4471</SelStart><SelEnd>4471</SelEnd></Tab><ActiveTab>10</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\FAT16.c</Filename><XPos>0</XPos><YPos>260</YPos><SelStart>8479</SelStart><SelEnd>8479</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\FAT16.h</Filename><XPos>0</XPos><YPos>41</YPos><SelStart>898</SelStart><SelEnd>898</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00a79ef0><key>iaridepm.enu1</key></Toolbar-00a79ef0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>363</Bottom><Right>336</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>158</yscreen><sizeHorzCX>195313</sizeHorzCX><sizeHorzCY>301527</sizeHorzCY><sizeVertCX>330078</sizeVertCX><sizeVertCY>696565</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>116</Bottom><Right>1026</Right><x>-2</x><y>-2</y><xscreen>1028</xscreen><yscreen>118</yscreen><sizeHorzCX>1003906</sizeHorzCX><sizeHorzCY>225191</sizeHorzCY><sizeVertCX>195313</sizeVertCX><sizeVertCY>301527</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

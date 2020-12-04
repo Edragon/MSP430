@@ -1,0 +1,408 @@
+ 红外遥控在生产和生活中应用越来越广泛,不同的红外遥控芯片有不同的发码协议,但一般都是由引导码,系统码,键码三部分组成.
+
+引导码是告诉接收机准备接收红外遥控码.系统码是识别码,不同的遥控芯片有不同的误别码,以免搞错.
+
+遥控器上不同的按键有不同的键码,系统码和键码都是16位码,8位正码,8位反码.如SC6122的系统码是FF00,FF和00互为反码,键码
+
+1为EF10也是互为反码.
+
+  SC6122的引导码为低电平为9000微秒,高电平为4500微秒.当然高电平不可能精确为9000微秒,在8000微秒到10000微秒都看作是正
+
+常范围,低电平在4000-5000之间都看作是正常范围.引导码后的32位编码(16位系统码和16位键码)不管高低电平,载波时间都是
+
+560微秒,但低电平持续时间是1125微秒,高电平持续时间是2250微秒,所以低电平除去载波时间大约是560微秒,高电平除去载波时间
+
+大约是1680微秒.低电平也有一个波动范围,在400-700之间都看作是正常的,具体多少可以通过示波器测量出来.高电平也有一个波
+
+动范围,在400-2000之间都看作是正常的,具体多少也是根据经验.当然范围越宽,捕捉红外线的范围也越宽,越精确.在捕捉到有高低
+
+电平之间,在560-1680之间取一个中间值1120微秒,认为小于1120微秒是低电平,大于1120微秒是高电平.
+
+下面有两个经过实践能在实验板上显示键码的程序,一个是汇编写的,一个是用C写的,与大家一起探讨遥控器.
+
+以下程序能在LCD上显示系统码和键码,按不同的按键,系统码不变,变的是键码.有不懂的地方可以在留言本上留言.
+
+RS EQU P2.5                 ;这几个是LCD引脚.
+RW EQU P2.6 
+E EQU P2.7 
+
+IRR EQU P3.3                ;红外接收的输出接P3.3.
+
+BUF EQU 30H ;30H-33H保存解码结果
+
+
+;=============================================
+ORG 0000H
+AJMP MAIN
+
+;=============================================
+ORG 0030H
+MAIN:
+MOV SP,#70H ;堆栈指针设到70H的地方
+
+ACALL INIT_LCD                                    ;初始化LCD
+
+MOV R7,#10
+ACALL DELAY_MS
+
+MOV DPTR,#MSG1
+CALL DISPLAY_LINE1                        ;在第一行显示 Test8: IR Reader
+MOV DPTR,#MSG2
+CALL DISPLAY_LINE2                        ;在第二行显示www.mcuedu.com  
+
+
+MAIN_LOOP:
+JB IRR,$ ;等待接收头信号为低
+ACALL GET_LOW ;测量引导脉冲低电平
+CLR C
+MOV A,R7
+SUBB A,#(8000/50) ;SC6122的引导脉冲低电平为9000US,我们只要测到低电平的值在8000-10000US范围内就认为合格的.
+JC MAIN_LOOP ;如果小于8000US,不对,重新等待接收
+
+CLR C
+MOV A,R7
+SUBB A,#(10000/50)
+JNC MAIN_LOOP
+
+ACALL GET_HIGH ;测量引导脉冲高电平
+CLR C
+MOV A,R7
+SUBB A,#(4000/50)
+JC MAIN_LOOP                    ;如果小于4000US,不对,重新等待接收
+
+CLR C
+MOV A,R7
+SUBB A,#(5000/50)
+JNC MAIN_LOOP                        ;如果大于5000US,不对,重新等待接收
+
+
+MOV R0,#BUF ;
+
+MOV R5,#8 ;SC6122发的码有32位,我们用4个字节来存放,每个字节有8位
+
+IR_NEXT:
+
+CALL GET_LOW
+
+CLR C
+MOV A,R7
+SUBB A,#(300/50) ;300US
+JC MAIN_LOOP                                ;低电平小于300微秒认为不对,重新接收
+
+CLR C
+MOV A,R7
+SUBB A,#(800/50) ;800US
+JNC MAIN_LOOP                                ;低电平大于800微秒认为不对,重新接收
+
+
+ACALL GET_HIGH
+CLR C
+MOV A,R7
+SUBB A,#(300/50) ;300US
+JC MAIN_LOOP                                ;高电平小于300微秒认为不对,重新接收
+
+CLR C
+MOV A,R7
+SUBB A,#(2000/50) ;2000US
+JNC MAIN_LOOP                                     ;高电平大于2000微秒认为不对,重新接收
+
+
+CLR C
+MOV A,R7
+SUBB A,#(1120/50) ;                            ;跟中间值1120进行比较
+
+
+RRC A
+MOV @R0,A                                    ;通过CY移到间接地址R0中去
+DJNZ R5,IR_NEXT                                    ;8位移完了吗
+MOV R5,#8
+INC R0
+MOV A,R0
+XRL A,#(BUF+4)
+JNZ IR_NEXT ;如果不到4个字节,接收下一个
+
+
+MOV DPTR,#MSG_6122
+ACALL DISPLAY_LINE1 ;显示格式名称
+
+ACALL DISPLAY_IR_CODE ;显示码
+
+
+AJMP MAIN_LOOP
+;============================================ 
+MSG1: DB " Test8: IR Reader "
+MSG2: DB " www.mcuedu.com "
+MSG_6122: DB " Format: SC6122 "
+;============================================
+
+;转为ASCII码在LCD在显示
+TO_ASCII:
+CJNE A,#0AH,TO_ASCII_1
+TO_ASCII_1:
+JC TO_ASCII_2 ;小于10
+ADD A,#('A'-10)
+RET
+TO_ASCII_2:
+ADD A,#'0'
+RET
+;============================================
+DISPLAY_IR_CODE:
+MOV A,#0C0H ;显示在第二行
+ACALL SEND_COMMAND_BYTE ;设置DDRAM地址
+
+MOV R0,#BUF
+DISPLAY_IR_CODE_NEXT:
+MOV A,@R0
+SWAP A
+ANL A,#0FH                            ;分离出高字节
+ACALL TO_ASCII                                ;转为ASCII码
+ACALL SEND_DATA_BYTE                             ;显示 
+MOV A,@R0
+ANL A,#0FH                            ;分离出低字节
+ACALL TO_ASCII                                 ;转为ASCII码
+ACALL SEND_DATA_BYTE                            ;显示 
+MOV A,#' '
+ACALL SEND_DATA_BYTE                                ;显示空格
+
+INC R0
+MOV A,R0
+XRL A,#(BUF+4)
+JNZ DISPLAY_IR_CODE_NEXT
+
+MOV R0,#8 ;第2行共有20个字符,前面显示用了12个,再用8个空格填满
+DISPLAY_IR_CODE_B:
+MOV A,#' '
+ACALL SEND_DATA_BYTE
+DJNZ R0,DISPLAY_IR_CODE_B
+
+RET
+
+
+;============================================
+;测量低电平时间,50US采样一次,R7加1一次,比如低电平时间为9000US,测得R7的结果为180(0B4H)
+;OUTPUT: R7
+GET_LOW:
+MOV R7,#00H
+
+GET_LOW_NEXT:
+MOV R6,#20 ;在晶振为11.0592M时,延50US需要46个机器周期,
+DJNZ R6,$ ;这条指令执行需要2个机器周期
+
+JB IRR,GET_LOW_RTN ;接收头为高电平,结束测量
+INC R7
+MOV A,R7
+JNZ GET_LOW_NEXT ;看R7是否有溢出
+
+GET_LOW_RTN:
+RET
+;============================================
+;测量高电平时间,50US采样一次,R7加1一次,比如高电平时间为4500US,测得R7的结果为90
+;OUTPUT: R7
+GET_HIGH:
+MOV R7,#00H
+
+GET_HIGH_NEXT:
+MOV R6,#20 ;在晶振为11.0592M时,延50US需要46个机器周期,
+DJNZ R6,$ ;这条指令执行需要2个机器周期
+
+JNB IRR,GET_HIGH_RTN ;接收头为低电平,结束测量
+INC R7
+MOV A,R7
+JNZ GET_HIGH_NEXT ;看R7是否有溢出
+
+GET_HIGH_RTN:
+RET
+;============================================
+;============================================
+
+DELAY_MS:
+MOV R6,#250
+DELAY_MS_NEXT:
+NOP
+NOP
+DJNZ R6,DELAY_MS_NEXT
+DJNZ R7,DELAY_MS
+RET
+;============================================ 
+;INPUT: R7
+DELAY:
+DJNZ R7,$
+RET
+;============================================
+;向LCD写一个命令字节
+;INPUT: ACC
+SEND_COMMAND_BYTE:
+CLR RS
+CLR RW
+
+MOV P0,A
+
+SETB E
+NOP
+NOP
+NOP
+NOP
+NOP
+NOP
+CLR E
+
+MOV R7,#100
+ACALL DELAY
+RET
+;===============================================
+;向LCD写一个数据字节
+;INPUT: ACC
+SEND_DATA_BYTE:
+SETB RS
+CLR RW
+
+MOV P0,A
+
+SETB E
+NOP
+NOP
+NOP
+NOP
+NOP
+NOP
+CLR E
+
+MOV R7,#100
+ACALL DELAY
+RET
+;======================================================
+;初始化LCD
+INIT_LCD:
+MOV A,#30H
+ACALL SEND_COMMAND_BYTE
+ACALL SEND_COMMAND_BYTE
+ACALL SEND_COMMAND_BYTE
+MOV A,#38H ;设置工作方式
+ACALL SEND_COMMAND_BYTE
+MOV A,#0CH ;显示状态设置
+ACALL SEND_COMMAND_BYTE
+MOV A,#01H ;清屏
+ACALL SEND_COMMAND_BYTE
+MOV A,#06H ;输入方式设置
+ACALL SEND_COMMAND_BYTE
+RET
+;=======================================================
+;在第一行显示
+;INPUT: DPTR指向要显示的内容
+DISPLAY_LINE1:
+MOV A,#080H
+DISPLAY_LINE1_A:
+ACALL SEND_COMMAND_BYTE ;设置DDRAM地址
+MOV R6,#20
+DISPLAY_LINE1_NEXT:
+CLR A
+MOVC A,@A+DPTR
+ACALL SEND_DATA_BYTE
+INC DPTR
+DJNZ R6,DISPLAY_LINE1_NEXT
+MOV R7,#100
+ACALL DELAY
+RET
+;=======================================================
+;在第二行显示
+;INPUT: DPTR指向要显示的内容
+DISPLAY_LINE2:
+MOV A,#0C0H
+AJMP DISPLAY_LINE1_A
+;=======================================================
+
+END
+
+
+下面是一个用C写的遥控器程序.能在数码管上显示键码.
+
+＃i nclude <reg52.h>
+
+#define c(x) (x*110592/120000) 
+
+sbit Ir_Pin=P3^3;
+
+unsigned char code Led_Tab[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,
+0xf8,0x80,0x90,0x88,0x83,0xC6,0xA1,0x86,0x8E};                        //共阳极数码显示码0-F.
+unsigned char code Led_Sel[]={0xe,0xd,0xb,0x7};
+
+unsigned char Led_Buf[4]; //显示缓冲区
+char Led_Index;                   //位选         
+
+unsigned char Ir_Buf[4]; //用于保存解码结果
+
+//==============================================================
+//数码管扫描
+timer0() interrupt 1 using 1
+{
+TL0=65536-1000;
+TH0=(65536-1000)/256; //定时器0设定约1000us中断一次，用于数码管扫描
+P0=0xff;
+P2=Led_Sel[Led_Index];                            //位选
+P0=Led_Tab[Led_Buf[Led_Index]];                    //段选
+
+if(++Led_Index>3) Led_Index=0;                    //四个扫描完了,到第一个数码管
+}
+//==============================================================
+unsigned int Ir_Get_Low()
+{
+TL1=0;
+TH1=0;
+TR1=1;
+while(!Ir_Pin && (TH1&0x80)==0);                
+TR1=0;           
+return TH1*256+TL1;
+}
+//=============================================================
+unsigned int Ir_Get_High()
+{
+TL1=0;
+TH1=0;
+TR1=1;
+while(Ir_Pin && (TH1&0x80)==0);
+TR1=0;
+return TH1*256+TL1;
+}
+//==============================================================
+main()
+{
+unsigned int temp;
+char i,j;
+Led_Index=1;
+
+TMOD=0x11;
+TL0=65536-1000;
+TH0=(65536-1000)/256; //定时器0设定约1000us中断一次，用于数码管扫描
+EA=1;
+ET0=1;
+TR0=1;
+
+Led_Buf[0]=0;
+Led_Buf[1]=0;
+Led_Buf[2]=0;
+Led_Buf[3]=0; //显示区设成0
+
+do{
+restart:
+while(Ir_Pin);
+temp=Ir_Get_Low();
+if(temp<c(8500) || temp>c(9500)) continue;//引导脉冲低电平9000
+temp=Ir_Get_High();
+if(temp<c(4000) || temp>c(5000)) continue;//引导脉冲高电平4500
+for(i=0;i<4;i++) //4个字节
+for(j=0;j<8;j++) //每个字节8位
+{
+temp=Ir_Get_Low();
+if(temp<c(200) || temp>c(800)) goto restart;
+temp=Ir_Get_High();
+if(temp<c(200) || temp>c(2000)) goto restart;
+Ir_Buf[i]>>=1;
+if(temp>c(1120)) Ir_Buf[i]|=0x80;
+}
+Led_Buf[0]=Ir_Buf[2]&0xf;
+Led_Buf[1]=(Ir_Buf[2]/16)&0xf;
+Led_Buf[2]=Ir_Buf[3]&0xf;
+Led_Buf[3]=(Ir_Buf[3]/16)&0xf; //显示结果
+}while(1);
+}
+

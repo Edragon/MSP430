@@ -1,0 +1,25 @@
+Device: CC1000
+
+System parameters:
+X-tal frequency: 14.745600 MHz	Internal
+X-tal accuracy: +/- 20 ppm
+RF frequency A: 869.840400 MHz	Active  	Rx
+RF frequency B: 869.840400 MHz	Inactive	Tx
+RX Mode:  Low Current: no,	Optimal frequency: yes,	High side LO
+Frequency separation: 64 kHz
+Data rate: 9.6 kBaud
+Data Format: Manchester		Fast
+RF output power: 5 dBm
+LOCK indicator: Continuous
+IF/RSSI: RSSI Enabled
+Operator Mode: Rx
+
+Component values, VCO inductor:
+L101 = 4.7 nH
+
+Component values, Match
+L32 = 120.0 nH
+L41 = 2.5 nH
+C31 = 10.0 pF
+C41 = N.A pF
+C42 = 4.7 pF

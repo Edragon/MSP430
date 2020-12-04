@@ -1,0 +1,31 @@
+
+Register:	Data:	mode:
+00		11	RX
+00		E1	TX
+00		7F	PD
+00		7B	XOSC Core Only
+00		79	XOSC Core & Bias
+00		71	XOSC Core, Bias & Synth
+01		58
+02		60
+03		00
+04		58
+05		5B
+06		43
+07		01
+08		AB
+09		F3	TX
+09		8C	else
+0A		32
+0B		FF
+0C		30	TX
+0C		30	else
+0D		10
+0E		26
+0F		90
+10		69
+11		47
+12		10
+13		01
+1C		00
+42		3F

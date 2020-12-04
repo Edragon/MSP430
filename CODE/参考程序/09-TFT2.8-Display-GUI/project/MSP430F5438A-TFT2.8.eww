@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\MSP430F5438A-TFT2.8.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\..\显示屏相关程序\中景园电子0.96OLED显示屏_MSP430系列_SPI_例程\OLED.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>

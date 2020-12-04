@@ -1,0 +1,10 @@
+
+msp430f149	        sdcard
+
+P5.4                     48           ChipSelect        1
+P5.2 / SOMI       46           DataIn           	2
+GND 	           GND              		3 (0 V)
+VCC                     VDD              		4 (3.3 V)
+P5.3 / UCLK1     47           Clock         	5
+P5.5                    44           CardDetect      	6
+P5.1 / SIMO       45           DataOut         	7

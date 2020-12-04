@@ -1,0 +1,24 @@
+伯乐电子收集整理。淘宝店铺：bole-horse.taobao.com
+1．	<MCU-fasong>发送端固定发送0x01,0x02……0x32,32字节数据
+2．	<PC-jieshou>接收端串口和PC连，当接收到后，打开串口助手或者超级终端软件，对接收到数据进行检验，
+	当接收到的也是0x01,0x02……0x32,32字节数据表示接收正确
+	其中波特率选择9600
+3.晶振使用XT2 8M,测试环境MSP430F149
+4.接口定义：
+#define  RF24L01_CE_0        P6OUT &=~BIT2         
+#define  RF24L01_CE_1        P6OUT |= BIT2        
+//=============================RF24L01_CSN端口==================================
+#define  RF24L01_CSN_0       P6OUT &=~BIT3         
+#define  RF24L01_CSN_1       P6OUT |= BIT3     
+//=============================RF24L01_SCK======================================
+#define  RF24L01_SCK_0       P6OUT &=~BIT4      
+#define  RF24L01_SCK_1       P6OUT |= BIT4   
+//============================= RF24L01_MOSI端口================================
+#define  RF24L01_MOSI_0      P6OUT &=~BIT5
+#define  RF24L01_MOSI_1      P6OUT |= BIT5
+//=============================MISO端口=========================================
+#define  RF24L01_MISO_0      P1OUT &=~BIT3
+#define  RF24L01_MISO_1      P1OUT |= BIT3
+//==========================IRQ状态============================================
+#define  RF24L01_IRQ_0       P1OUT &=~BIT4       
+#define  RF24L01_IRQ_1       P1OUT |= BIT4

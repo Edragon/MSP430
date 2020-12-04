@@ -1,0 +1,20 @@
+/***************************************************
+程序功能：静态显示字符
+****************************************************/
+#include  <msp430.h>
+#include  "BoardConfig.h" 
+#include  "Cry1602.h"
+
+uchar shuzi[]={"0123456789"};
+uchar zimu1[]={"abcdefghigklmnopqrstuvwxyz"};
+uchar zimu2[]={"ABCDEFGHIGKLMNOPQRSTUVWXYZ"};
+uchar *fuhao="~`!@#$%^&*()_+-=\/|,.、;'<>?:""";
+void main( void )
+{
+    uchar i;
+    WDTCTL = WDT_ADLY_1000;               //间隔定时器，定时1000ms
+    BoardConfig(0xb8);                   //关闭数码管、流水灯和电平转换
+    
+    LcdReset();
+    
+}

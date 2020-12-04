@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>CC1000_TRx/Release</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>92</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>193</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+      <TerminalIO/>
+      <CodeCoveragePlugin/>
+      <Profiling/>
+    <Debug-Log/><Find-in-Files><ColumnWidth0>352</ColumnWidth0><ColumnWidth1>50</ColumnWidth1><ColumnWidth2>603</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-31763-8644</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>CC1000_TRx</ExpandedNode><ExpandedNode>CC1000_TRx/cc1000msp430.c</ExpandedNode><ExpandedNode>CC1000_TRx/rfmodem_cc1000.c</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-18485-10940</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-10486-12823</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-5331-9199</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\cc1000msp430.c</Filename><XPos>0</XPos><YPos>69</YPos><SelStart>18178</SelStart><SelEnd>18178</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\configure.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>2420</SelStart><SelEnd>2420</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\simpleio.c</Filename><XPos>0</XPos><YPos>102</YPos><SelStart>3869</SelStart><SelEnd>3869</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\getchar.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\interrupt.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\putchar.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\rfmodem_Main.c</Filename><XPos>0</XPos><YPos>344</YPos><SelStart>6718</SelStart><SelEnd>6718</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\IO_Define.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>1114</SelStart><SelEnd>1120</SelEnd></Tab><ActiveTab>7</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\configure.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00a7abf8><key>iaridepm.enu1</key></Toolbar-00a7abf8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>228</Bottom><Right>166</Right><x>-2</x><y>-2</y><xscreen>0</xscreen><yscreen>0</yscreen><sizeHorzCX>0</sizeHorzCX><sizeHorzCY>0</sizeHorzCY><sizeVertCX>221053</sizeVertCX><sizeVertCY>657143</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>77</Bottom><Right>762</Right><x>-2</x><y>-2</y><xscreen>764</xscreen><yscreen>79</yscreen><sizeHorzCX>1005263</sizeHorzCX><sizeHorzCY>225714</sizeHorzCY><sizeVertCX>0</sizeVertCX><sizeVertCY>0</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
